@@ -11,13 +11,8 @@ function run() {
   let user;
   let orders;
 
-  loadUser((name) => {
-    user = name;
-  });
-
-  loadOrders((count) => {
-    orders = count;
-  });
+  setTimeout(() => loadUser((name) => { user = name; },
+  loadOrders((count) => {orders = count;}) , 10))
 
   console.log("User: " + user);
   console.log("Orders: " + orders);
