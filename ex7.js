@@ -11,11 +11,19 @@ function run() {
   let user;
   let orders;
 
-  setTimeout(() => loadUser((name) => { user = name; },
-  loadOrders((count) => {orders = count;}) , 10))
 
-  console.log("User: " + user);
-  console.log("Orders: " + orders);
+
+  loadUser((name) => {
+    user = name;
+  })
+
+  loadOrders((count) => {
+    orders = count;
+  })
+
+  setTimeout(() => {
+  console.log("User: " + user)
+  console.log("Orders: " + orders) }, 50);
 }
 
 if (typeof module !== "undefined") module.exports = { run };
